@@ -16,9 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
-from django.views.static import serve #For hosting
-from django.conf.urls import url #For hosting
-
 # video 6
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
@@ -32,8 +29,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name="index"),
     path('analyze', views.analyze, name="analyze"),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), #For hosting
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), #For hosting
     # path('capitalizefirst', views.capitalizefirst,name= "capitalizefirst"),
     # path('newlineremove', views.newlineremove,name= "newlineremove"),
     # path('spaceremove', views.spaceremove,name= "spaceremove"),
